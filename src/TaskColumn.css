@@ -1,0 +1,58 @@
+.outer-container {
+  background-color: #fdfdfd; /* Updated color */
+  border-radius: 12px;
+  width: 315px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+}
+
+.header {
+  background-color: #7e57c2;
+  padding: 5px 15px;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  
+}
+.header-title-in-progress {
+  color: #000000; 
+}
+.task-list-container {
+  padding: 20px;
+  background-color: #ffffff; 
+  height: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  border: 1px solid #e6e6e6; 
+  border-radius: 10px; 
+}
+
+.priority-chip {
+  font-size: 12px; 
+  border-radius: 4px; 
+  padding: 5px 10px; 
+  margin-top: 10px;
+  margin-left: 10px; 
+}
+
+.priority-chip.high {
+  background-color: #ffece1; 
+  color: #ff9b62; 
+}
+
+.priority-chip.medium {
+  background-color: #ffece1; 
+  color: #ff43c3; 
+}
+
+.priority-chip.low {
+  background-color: #f0ffdd; 
+  color: #9da09a; 
+}
+
+
+
