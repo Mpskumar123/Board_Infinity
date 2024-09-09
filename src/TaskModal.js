@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CloseIcon from '@mui/icons-material/Close'; // Import Close icon
 import { addTask } from './firestoreOperations'; 
 import './TaskModel.css'; 
 const TaskModal = ({ open, handleClose }) => {
@@ -24,7 +25,7 @@ const TaskModal = ({ open, handleClose }) => {
   const onSubmit = async () => {
     try {
       await addTask(task);
-      alert('Task is added');
+      alert('Task is added successfully');
       setTask({ title: '', description: '', date: '', status: '', priority: '' });
       handleClose();
       window.location.reload();
@@ -41,6 +42,7 @@ const TaskModal = ({ open, handleClose }) => {
             <AddCircleOutlineIcon className="plus-icon" />
           </Box>
           Create New Task
+          <CloseIcon className="close-button" onClick={handleClose} /> 
         </Typography>
         <TextField
           required

@@ -36,6 +36,11 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const refreshTasks = async () => {
+    const updatedTasks = await fetchTasks();
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="main-container">
       <Typography
@@ -70,27 +75,30 @@ function App() {
       <div className="columns-container">
         <TaskColumn
           title="TODO"
+          status="TODO"
           tasks={tasks.filter((task) => task.status === 'TODO')}
           handleAddTask={handleAddTask}
           handleDeleteTask={handleDeleteTask}
           headerColor="#8a30e5"
-          className="task-column"
+          refreshTasks={refreshTasks} 
         />
         <TaskColumn
           title="IN PROGRESS"
+          status="IN PROGRESS"
           tasks={tasks.filter((task) => task.status === 'IN PROGRESS')}
           handleAddTask={handleAddTask}
           handleDeleteTask={handleDeleteTask}
           headerColor="#ffc14e"
-          className="task-column"
+          refreshTasks={refreshTasks} 
         />
         <TaskColumn
           title="COMPLETED"
+          status="COMPLETED"
           tasks={tasks.filter((task) => task.status === 'COMPLETED')}
           handleAddTask={handleAddTask}
           handleDeleteTask={handleDeleteTask}
           headerColor="#06c270"
-          className="task-column"
+          refreshTasks={refreshTasks} 
         />
       </div>
       <TaskModal
