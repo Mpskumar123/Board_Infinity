@@ -138,7 +138,7 @@ const TaskColumn = ({ title, status, headerColor, onStatusChange }) => {
                     fontSize: '1.2rem', 
                     display: 'inline-flex', 
                     alignItems: 'center',
-                    color: '#2c0f6d',
+                    color: 'black',
                     marginLeft: '15px',
                     marginTop: '15px',
                   }}
