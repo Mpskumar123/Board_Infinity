@@ -89,6 +89,7 @@ function App() {
           handleAddTask={handleAddTask}
           handleDeleteTask={handleDeleteTask}
           headerColor="#ffc14e"
+          color="black"
           refreshTasks={refreshTasks} 
         />
         <TaskColumn

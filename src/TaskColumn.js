@@ -49,7 +49,7 @@ const StyledMenuHeader = styled(Typography)(({ theme }) => ({
   borderBottom: '1px solid #e0e0e0',
 }));
 
-const TaskColumn = ({ title, status, headerColor, onStatusChange }) => {
+const TaskColumn = ({ title, status, color, headerColor, onStatusChange }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedTaskIndex, setSelectedTaskIndex] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -99,7 +99,8 @@ const TaskColumn = ({ title, status, headerColor, onStatusChange }) => {
   return (
     <div className="outer-container">
       <div className="header" style={{ backgroundColor: headerColor }}>
-        <h3 className="header-title">{title}</h3>
+        <h3 className="header-title" style={{ color: title === 'IN PROGRESS' ? color : 'defaultColor' }} // Apply color based on title
+         >{title}</h3>
       </div>
       <div className="task-list-container">
         {tasks.map((task, index) => (
